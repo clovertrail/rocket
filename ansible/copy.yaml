@@ -1,0 +1,38 @@
+- hosts: vmss
+  tasks:
+  - block:
+    - name: "Checking folders"
+      stat:
+       path: "{{item}}"
+      register: folder_stats
+      with_items:
+      - ["/home/honzhan/Tools"]
+    - name: "Creating multiple folders without disturbing previous permissions"
+      file:
+       path: "{{item.item}}"
+       state: directory
+       mode: 0755
+       group: honzhan
+       owner: honzhan
+      when: item.stat.exists == false
+      with_items:
+      - "{{folder_stats.results}}"
+  - copy:
+        src: /home/hongjiang/Tools/go1.9.4.linux-amd64.tar.gz
+        dest: /home/honzhan/Tools/
+        owner: honzhan
+        group: honzhan
+        mode: 0644
+  - copy:
+        src: /home/hongjiang/Tools/node-v9.0.0-linux-x64.tar.xz
+        dest: /home/honzhan/Tools/
+        owner: honzhan
+        group: honzhan
+        mode: 0644
+  - copy:
+        src: /home/hongjiang/Tools/packages-microsoft-prod.deb
+        dest: /home/{{ ansible_env.USER }}/Tools/
+        owner: honzhan
+        group: honzhan
+        mode: 0644
+

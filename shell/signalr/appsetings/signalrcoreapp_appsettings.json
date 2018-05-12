@@ -1,0 +1,12 @@
+﻿{
+  "SignalRService": {
+    "ConcurrentClientCount": {{ BroadcastThreshold }}
+  },
+  "LoggingSupport": {
+    "LogLevel": {
+      "Default": "Information",
+      "Debug": "Debug",
+      "Trace": "Trace"
+    }
+  }
+}

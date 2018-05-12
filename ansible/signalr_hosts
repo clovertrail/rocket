@@ -1,0 +1,13 @@
+[linux]
+appserver ansible_host=appserver.eastus.cloudapp.azure.com ansible_port=22222 ansible_user=honzhan
+#benchserver  ansible_ssh_host=benchserver.eastus.cloudapp.azure.com ansible_ssh_user=honzhan ansible_port=22222
+#agent1 ansible_ssh_host=ubuntu1.southeastasia.cloudapp.azure.com ansible_ssh_user=honzhan
+#agent2 ansible_ssh_host=ubuntu2.southeastasia.cloudapp.azure.com ansible_ssh_user=honzhan
+#agent3 ansible_ssh_host=singlecpu.eastus.cloudapp.azure.com ansible_ssh_user=honzhan
+#agent4 ansible_ssh_host=ubuntu1.eastus.cloudapp.azure.com ansible_ssh_user=honzhan
+#signalr_linux0 ansible_ssh_host=signalrlinux1.southeastasia.cloudapp.azure.com ansible_ssh_user=honzhan
+#signalr_linux1 ansible_ssh_host=signalrlinux2.southeastasia.cloudapp.azure.com ansible_ssh_user=honzhan
+#signalr_linux2 ansible_ssh_host=signalrlinux3.southeastasia.cloudapp.azure.com ansible_ssh_user=honzhan
+#vm1_bench ansible_ssh_host=signalr1.southeastasia.cloudapp.azure.com ansible_ssh_port=50003 ansible_ssh_user=honzhan
+#vm2_bench ansible_ssh_host=signalr1.southeastasia.cloudapp.azure.com ansible_ssh_port=50004 ansible_ssh_user=honzhan
+#vm3_bench ansible_ssh_host=signalr1.southeastasia.cloudapp.azure.com ansible_ssh_port=50005 ansible_ssh_user=honzhan

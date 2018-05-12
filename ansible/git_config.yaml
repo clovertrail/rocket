@@ -1,0 +1,23 @@
+- name: "Configure git"
+  hosts: ubuntu
+  tasks:
+  - git_config:
+      name: user.email
+      scope: global
+      value: 'honzhan@microsoft.com'
+  - git_config:
+      name: user.name
+      scope: global
+      value: 'Hongjiang Zhang'
+  - git_config:
+      name: core.editor
+      scope: global
+      value: vim
+  - git_config:
+      name: core.pager
+      scope: global
+      value: 'less -R'
+  - git_config:
+      name: color.ui
+      scope: global
+      value: true

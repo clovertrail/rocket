@@ -1,0 +1,21 @@
+﻿{
+  "SignalRService": {
+    "ConnectionString": "HostName={{ ServiceEndpoint }};Key=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789;",
+    "ConsoleLogLevel": "Information",
+    "ServiceConnectionNo": 5,
+    "ProtocolType": "Binary",
+    "ReceiveBufferSize": 8192,
+    "SendBufferSize": 4096,
+    "ConcurrentClientCount": {{ BroadcastThreshold }},
+    "EnableMetrics": false,
+    "EchoAll4TroubleShooting": false,
+    "DontSendComplete": false
+  },
+  "LoggingSupport": {
+    "LogLevel": {
+      "Default": "Information",
+      "Debug": "Debug",
+      "Trace": "Trace"
+    }
+  }
+}

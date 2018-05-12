@@ -1,0 +1,27 @@
+﻿{
+  "Logging": {
+    "IncludeScopes": false,
+    "LogLevel": {
+      "Default": "Debug",
+      "System": "Information",
+      "Microsoft": "Information"
+    }
+  },
+  "Redis": {
+    "ConnectionString": ""
+  },
+  "Auth": {
+    "JWT": {
+      "Issuer": "custom-app",
+      "Audience": "{{ ServiceEndpoint }}",
+      "IssuerSigningKey": "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+      "IssuerSigningKey2": "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    }
+  },
+  "Diagnostic": {
+    "EnableMetrics": false,
+    "EchoAll4TroubleShooting": false,
+    "DisableDupOutputChannel": true
+  },
+  "EnableStickySession": false
+}

@@ -1,0 +1,15 @@
+- hosts: vmss
+  become: true
+  become_user: root
+  become_method: sudo
+  tasks:
+  - name: Install deb packages
+    apt:
+       deb: /home/honzhan/Tools/packages-microsoft-prod.deb
+  - name: Update apt packages
+    apt: >
+       update_cache=yes
+  - name: Install dotnet core
+    apt: name={{item}} state=installed
+    with_items:
+       - dotnet-sdk-2.1.4

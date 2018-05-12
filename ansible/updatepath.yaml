@@ -1,0 +1,14 @@
+- hosts: vmss
+  tasks:
+  - name: add {{extra_path}} to path
+    become: true
+    become_user: root
+    become_method: sudo
+    vars:
+      extra_path: /home/honzhan/Tools/go/bin:/home/honzhan/Tools/node-v9.0.0-linux-x64/bin
+    lineinfile: >
+      dest=/etc/environment
+      state=present
+      backrefs=yes
+      regexp='PATH=(["]*)((?!.*?{{extra_path}}).*?)(["]*)$'
+      line="PATH=\1\2:{{extra_path}}\3"

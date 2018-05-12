@@ -1,0 +1,20 @@
+- name: "Creating multiple by checking folders"
+  hosts: remote
+  tasks:
+  - block:
+    - name: "Checking folders"
+      stat:
+       path: "{{item}}"
+      register: folder_stats
+      with_items:
+      - ["/home/honzhan/f1","/home/honzhan/f2","/home/honzhan/f3"]
+    - name: "Creating multiple folders without disturbing previous permissions"
+      file:
+       path: "{{item.item}}"
+       state: directory
+       mode: 0755
+       group: honzhan
+       owner: honzhan
+      when: item.stat.exists == false
+      with_items:
+      - "{{folder_stats.results}}"

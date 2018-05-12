@@ -1,0 +1,12 @@
+- hosts: vmss
+  tasks:
+  - name: Extract go*.tar.gz
+    unarchive:
+      src: /home/honzhan/Tools/go1.9.4.linux-amd64.tar.gz
+      dest: /home/honzhan/Tools
+      remote_src: yes
+  - name: Extract node
+    unarchive:
+      src: /home/honzhan/Tools/node-v9.0.0-linux-x64.tar.xz
+      dest: /home/honzhan/Tools
+      remote_src: yes
